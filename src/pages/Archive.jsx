@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { StyledPageHeader } from "../styles/typography";
 import { Flex } from "antd";
 import { OutlinedLink } from "../styles/typography";
+import { useTranslation } from "react-i18next";
 
 const StyledArchivePage = styled(Flex)`
   padding: 30px;
@@ -130,6 +131,7 @@ const annotations = [
 ];
 
 const Magazine = ({ magazine }) => {
+  
   return (
     <div>
       {magazine.year} г.{" "}
@@ -156,17 +158,18 @@ const Annotation = ({ annotation }) => {
 };
 
 export const Archive = () => {
+  const { i18n } = useTranslation();
   return (
     <StyledArchivePage vertical gap={20}>
       <Flex vertical>
         <StyledPageHeader>
-          Научно-образовательный и прикладной журнал
+        {i18n.t("journal_definition")}
         </StyledPageHeader>
-        <StyledPageHeader>ФИНАНСОВЫЕ ИССЛЕДОВАНИЯ</StyledPageHeader>
+        <StyledPageHeader>{i18n.t("journal_name")}</StyledPageHeader>
       </Flex>
       <Flex justify="space-evenly">
         <Flex vertical gap={20}>
-          <h1>АННОТАЦИИ:</h1>
+          <h1>{i18n.t("annotations")}:</h1>
           <Flex vertical>
             {annotations.map((annotation, index) => (
               <Annotation key={index} annotation={annotation} />
@@ -174,7 +177,7 @@ export const Archive = () => {
           </Flex>
         </Flex>
         <Flex vertical gap={20}>
-          <h1>ВЫПУСКИ ЖУРНАЛА:</h1>
+          <h1>{i18n.t("journal_issues")}:</h1>
           <Flex gap={30} justify="space-between">
             <Flex vertical>
               {magazines.map((magazine, index) => (

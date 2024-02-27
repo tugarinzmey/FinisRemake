@@ -33,13 +33,13 @@ export const MainHeader = () => {
       </StyledHeaderLink>
       <Flex align="center" flex={1} justify="space-around" wrap="wrap" gap={10}>
         <StyledHeaderLink to="/news">{i18n.t("news")}</StyledHeaderLink>
-        <StyledHeaderLink to="/requirements">Требования</StyledHeaderLink>
-        <StyledHeaderLink to="/reviewment">Рецензирование</StyledHeaderLink>
-        <StyledHeaderLink to="/ethics">Этика</StyledHeaderLink>
-        <StyledHeaderLink to="/licensing">Лицензирование</StyledHeaderLink>
-        <StyledHeaderLink to="/chief-editor">Глав.Редактор</StyledHeaderLink>
-        <StyledHeaderLink to="/collegium">Коллегия</StyledHeaderLink>
-        <StyledHeaderLink to="https://rsue.ru/">РГЭУ</StyledHeaderLink>
+        <StyledHeaderLink to="/requirements">{i18n.t("requirements")}</StyledHeaderLink>
+        <StyledHeaderLink to="/reviewment">{i18n.t("reviewment")}</StyledHeaderLink>
+        <StyledHeaderLink to="/ethics">{i18n.t("ethics")}</StyledHeaderLink>
+        <StyledHeaderLink to="/licensing">{i18n.t("licensing")}</StyledHeaderLink>
+        <StyledHeaderLink to="/chief-editor">{i18n.t("editor")}</StyledHeaderLink>
+        <StyledHeaderLink to="/collegium">{i18n.t("collegium")}</StyledHeaderLink>
+        <StyledHeaderLink to="https://rsue.ru/">{i18n.t("RSUE")}</StyledHeaderLink>
         <StyledLanguagePicker />
       </Flex>
     </StyledHeader>

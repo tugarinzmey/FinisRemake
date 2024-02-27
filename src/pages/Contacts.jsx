@@ -4,49 +4,50 @@ import styled from "styled-components";
 import { StyledPageHeader } from "../styles/typography";
 import { Divider, Flex } from "antd";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const StyledContactsPage = styled(Flex)`
   padding: 30px;
 `;
 
 export const Contacts = () => {
+  const { i18n } = useTranslation();
   return (
     <StyledContactsPage vertical gap={20} align="center">
-      <StyledPageHeader>Контактная информация</StyledPageHeader>
+      <StyledPageHeader>{i18n.t("Contact information")}</StyledPageHeader>
       <Flex vertical>
-        <h1>По всем вопросам просьба обращаться в адрес Редакции журнала:</h1>
-        <div>344002, Ростов-на-Дону, ул. Б.Садовая, 69. ауд. 452.</div>
-        <div>Тел./факс: (863) 261-38-01</div>
+        <h1>{i18n.t("info")}:</h1>
+        <div>344002, {i18n.t("adres")}.</div>
+        <div>{i18n.t("phone")}: (863) 261-38-01</div>
         <div>WhatsApp: +7-903-47-43-777</div>
         <div>E-mail: research@inbox.ru</div>
         <div>
-          Интернет-страница: <Link to="">www.finis.rsue.ru</Link>
+        {i18n.t("The web page")}: <Link to="">www.finis.rsue.ru</Link>
         </div>
         <div>
-          Главный редактор – д.э.н., профессор Кузнецов Николай Геннадьевич
+        {i18n.t("chuvak_info")}
         </div>
         <div>
-          Зам. главного редактора – д.э.н., профессор – Алифанова Елена
-          Николаевна
+        {i18n.t("zam_chuvak1_info")}
         </div>
         <div>
-          Зам. главного редактора – д.э.н., профессор – Семенюта Ольга Гетовна
+        {i18n.t("zam_chuvak2_info")}
         </div>
         <div>
-          Ответственный секретарь – к.э.н., доцент - Шапиро Ирина Евгеньевна
+        {i18n.t("secretary_info")}
         </div>
       </Flex>
       <Divider />
       <Flex vertical>
         <div>
-          Адрес издателя - Издательско-полиграфический комплекс РГЭУ (РИНХ)
+        {i18n.t("adres2")}
         </div>
-        <div>344002, Ростов-на-Дону, ул. Б.Садовая, 69. к. 152.</div>
-        <div>Тел./факс: (863) 261-38-02, 261-38-77, 266-42-34</div>
+        <div>344002, {i18n.t("adres3")}.</div>
+        <div>{i18n.t("phone")}: (863) 261-38-02, 261-38-77, 266-42-34</div>
         <div>E-mail: ipkrinh@gmail.com</div>
-        <div>Главный редактор ИПК РГЭУ (РИНХ) – Лазарева Юлия Сергеевна</div>
+        <div>{i18n.t("ipc_redactor")}</div>
         <div>
-          Редактирование, корректировка, верстка и макетирование – Климова Вера
+        {i18n.t("Klimova")}
         </div>
       </Flex>
     </StyledContactsPage>
