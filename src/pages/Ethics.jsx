@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { StyledPageHeader } from "../styles/typography";
 import { Flex } from "antd";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const StyledEthicsPage = styled(Flex)`
   padding: 30px;
@@ -14,104 +15,70 @@ const StyledUsefulContentContainer = styled(Flex)`
 `;
 
 export const Ethics = () => {
+  const { i18n } = useTranslation();
   return (
     <StyledEthicsPage vertical gap={20}>
-      <StyledPageHeader>Публикационная этика. Памятка авторам</StyledPageHeader>
+      <StyledPageHeader>{i18n.t("ethicks_header")}</StyledPageHeader>
       <div>
-        Этические стандарты в отношении публикаций нужны, чтобы гарантировать
-        высокое качество научных публикаций, доверие к научным исследованиям со
-        стороны общества и признание за ученым за их идеи.
+      {i18n.t("ethicks_text1")}
       </div>
       <Flex vertical>
-        <h1>Необходимо избегать:</h1>
+        <h1>{i18n.t("ethics_avoid_")}:</h1>
         <div>
-          • Фабрикации и фальсификации данных: фабрикация данных означает, что
-          исследователь не проводил никакой работы, а придумал данные.
-          Фальсификация данных означает, что исследователь выполнил эксперимент,
-          но затем изменил некоторые данные. Оба этих действия подрывают доверие
-          общества к ученым.
+          • {i18n.t("ethics_avoid1_")}.
         </div>
         <div>
-          • Плагиата: использование чужих идей и работ, не отдавая им должное –
-          нечестно и несправедливо. Копирование хотя бы одного предложения из
-          рукописи другого или даже своего собственного из ранее опубликованной
-          рукописи без оформления цитаты считается плагиатом – передайте смысл
-          своими словами.
+          • П{i18n.t("ethics_avoid2_")}
         </div>
         <div>
-          • Подачи статьи в несколько журналов одновременно: неэтично подавать
-          одну рукопись в более чем один журнал одновременно. Такие действия
-          отнимают время редакторов и рецензентов, а также могут повредить
-          репутации журналов, если рукопись будет опубликована, более чем в
-          одном из них.
+          • {i18n.t("ethics_avoid3_")}
         </div>
         <div>
-          • Дублирующих публикаций: означает публикацию похожих рукописей,
-          основанных на одном эксперименте. Это приведет к тому, что читатели не
-          станут обращать внимания на Ваши работы.
+          • {i18n.t("ethics_avoid4_")}
         </div>
       </Flex>
       <Flex vertical>
-        <h1>Полезно:</h1>
+        <h1>{i18n.t("ethics_useful")}:</h1>
         <div>
-          • Цитировать ученых научной школы, идеи которой Вы развиваете.
+          • {i18n.t("ethics_useful1")}.
         </div>
-        <div>• Использовать актуальный материал:</div>
+        <div>•{i18n.t("ethics_useful2")}:</div>
         <StyledUsefulContentContainer vertical>
           <div>
-            • Российская государственная библиотека RSL.RU -крупнейшая публичная
-            библиотека мира.{" "}
+            • {i18n.t("ethics_useful3_part1")}.{" "}
             <Link to="https://www.rsl.ru/ru/root3444/root34443448/">
-              Стать читателем
+            {i18n.t("ethics_useful3_part2")}
             </Link>{" "}
-            библиотеки может любой гражданин России или другого государства,
-            если он я­вляется студентом вуза либо достиг 18 лет. Свои фонды
-            библиотека раскрывает не только посредством системы каталогов
-            и картотек: создан и постоянно пополняется электронный каталог,
-            доступ к которому можно получить как в браузере, так и через
-            мобильное приложение eRSL.
+            {i18n.t("ethics_useful3_part3")}
           </div>
           <div>
             •{" "}
             <Link to="https://elibrary.ru/">
-              Научная электронная библиотека eLibrary.Ru
+            {i18n.t("ethics_useful4_part1")}
             </Link>{" "}
-            - крупнейшая в России коллекция электронных журналов и баз данных по
-            всем отраслям наук. Около 7000 западных и более 2300 российских
-            полнотекстовых научных электронных журналов. SCI и Российский индекс
-            научного цитирования. Ко многим ресурсам доступ открыт всем
-            пользователям.
+            - {i18n.t("ethics_useful4_part2")}
           </div>
           <div>
-            • Электронные журналы издательства{" "}
+            • {i18n.t("ethics_useful5_part1")}{" "}
             <Link to="https://taylorandfrancis.com/">Taylor & Francis</Link>{" "}
-            (более 1000 наименований). Доступ открыт к полным текстам журналов
-            текущего года и всем полным текстам архивных номеров. Используйте
-            ссылку "Journals", расположенную в верхней части страницы, или
-            ссылку Search для поиска по названию журнала, фамилии автора,
-            заглавию/реферату/ключевому слову и т.д.)
+            {i18n.t("ethics_useful5_part2")}
           </div>
           <div>
-            • Коллекция электронных журналов издательства{" "}
-            <Link to="https://journals.sagepub.com/">SAGE</Link>. В коллекцию
-            входят лучшие мировые журналы по социологии, праву и другим отраслям
-            наук.
+            • {i18n.t("ethics_useful6_part1")}{" "}
+            <Link to="https://journals.sagepub.com/">SAGE</Link>. {i18n.t("ethics_useful6_part2")}
           </div>
           <div>
-            • Электронные журналы американской компании{" "}
-            <Link to="https://search.ebscohost.com/">EBSCO</Link>, включая
-            социологическую базу данных SocINDEX with Full Text. Более 7500
-            электронных журналов в основном по общественным наукам.
+            • {i18n.t("ethics_useful7_part1")}{" "}
+            <Link to="https://search.ebscohost.com/">EBSCO</Link>, {i18n.t("ethics_useful7_part2")}
           </div>
           <div>
-            • Журнал <Link to="https://www.nature.com/">Nature.</Link>
+            • {i18n.t("journal")} <Link to="https://www.nature.com/">Nature.</Link>
           </div>
           <div>
-            • Журнал <Link to="https://www.science.org/">Science</Link> (с 1997
-            года) и информационная база SCIENCE NOW.
+            •{i18n.t("journal")}  <Link to="https://www.science.org/">Science</Link>{i18n.t("journal_part2")}
           </div>
           <div>
-            • Электронные журналы издательства{" "}
+            • {i18n.t("ethics_useful8")}{" "}
             <Link to="https://academic.oup.com/journals/">
               Oxford University Press
             </Link>
@@ -121,29 +88,21 @@ export const Ethics = () => {
             <Link to="https://www.cambridge.org/core/product/identifier//type/BOOK">
               Cambridge University Press 
             </Link>{" "}
-            (База данных Humanities & Social Sciences) - содержит 103
-            электронных журнала по следующим отраслям: экономика; история;
-            философия; политология; юриспруденция; лингвистика; социология;
-            религия; культурология; музыка; театр; археология и антропология;
-            региональные исследования.
+            {i18n.t("ethics_useful9")}
           </div>
           <div>
-            • <Link to="http://www.berlin.iz-soz.de/">Справочник</Link>
-             электронных ресурсов по общественным наукам (Германия).
+            • <Link to="http://www.berlin.iz-soz.de/">{i18n.t("ethics_useful10_part1")}</Link>
+            {i18n.t("ethics_useful10_part2")}.
           </div>
           <div>
-            • Ресурсы Интернет по 
-            <Link to="https://inion.ru/index15.php"> политологии</Link>.
+            • {i18n.t("ethics_useful11_part1")} 
+            <Link to="https://inion.ru/index15.php"> {i18n.t("ethics_useful11_part2")}</Link>.
           </div>
           <div>
-            • <Link to="https://metapress.com/">SpringerLink</Link> – это одна
-            из ведущих мировых интерактивных баз данных, содержащих около 2
-            тысяч высококачественных полнотекстовых журналов, 25 тысяч книг,
-            справочные материалы и интерактивную коллекцию архивов.
+            • <Link to="https://metapress.com/">SpringerLink</Link> – {i18n.t("ethics_useful12")}
           </div>
           <div>
-            • Немецкий портал по международным отношениям и региональным
-            исследованиям
+            • {i18n.t("ethics_useful13")}
           </div>
         </StyledUsefulContentContainer>
       </Flex>

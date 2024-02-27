@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Flex } from "antd";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const StyledFooterLink = styled(Link)`
   font-size: 21px;
@@ -18,13 +19,14 @@ const StyledFooter = styled.footer`
 `;
 
 export const MainFooter = () => {
+  const { i18n } = useTranslation();
   return (
     <StyledFooter>
       <Flex gap={16}>
-        <StyledFooterLink to="/contacts">Контакты</StyledFooterLink>
+        <StyledFooterLink to="/contacts">{i18n.t("contacs")}</StyledFooterLink>
         <StyledFooterLink to="mailto:research@rsue.ru">E-mail</StyledFooterLink>
         <StyledFooterLink to="/archive" replace>
-          Архив
+        {i18n.t("archive")}
         </StyledFooterLink>
       </Flex>
     </StyledFooter>

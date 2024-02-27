@@ -1,6 +1,7 @@
 import { StyledPageHeader } from "../styles/typography";
 import { Flex } from "antd";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const StyledCollegiumPage = styled(Flex)`
   padding: 30px 50px;
@@ -15,135 +16,85 @@ const CollegiumMember = ({ fullname, children }) => {
 };
 
 export const Collegium = () => {
+  const { i18n } = useTranslation();
   return (
     <StyledCollegiumPage vertical gap={20}>
-      <StyledPageHeader>Состав редакционной коллегии:</StyledPageHeader>
+      <StyledPageHeader>{i18n.t("collegium_members")}:</StyledPageHeader>
       <ol>
-        <CollegiumMember fullname="Кузнецов Николай Геннадьевич (главный редактор)">
-          д.э.н., профессор, Заслуженный деятель науки РФ, Научный руководитель
-          университета, Почетный работник высшего профессионального образования
-          Россйской Федерации, зав. кафедрой «Экономическая теория» РГЭУ (РИНХ),
-          Ростов-на- Дону, Россия
+        <CollegiumMember fullname={i18n.t("member1")}>
+        {i18n.t("member1_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Алифанова Елена Николаевна (заместитель главного редактора)">
-          д.э.н., профессор, Почетный работник высшего профессионального
-          образования Россйской Федерации, руководитель Департамента финансовых
-          рынков и финансового инжиниринга, Финансовый университет при
-          Правительстве Российской Федерации, Москва, Россия
+        <CollegiumMember fullname={i18n.t("member2")}>
+        {i18n.t("member2_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Божко Лариса Леонидовна">
-          д.э.н., академик Международной академии информатизации, проректор по
-          академическим вопросам Некоммерческого акционерного общества
-          «Рудненскй индустриальный институт», Рудный, республика Казахстан
+        <CollegiumMember fullname={i18n.t("member3")}>
+        {i18n.t("member3_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Вовченко Наталья Геннадьевна">
-          д.э.н., профессор РГЭУ (РИНХ), Почетный работник высшего
-          профессионального образования Россйской Федерации, действительный член
-          Академии социальных наук, проректор по научной работе и инновациям
-          РГЭУ (РИНХ), Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member4")}>
+        {i18n.t("member4_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Вазарханов Ислам Салаудинович">
-          д.э.н., доцент, Заслуженный экономист РФ, заместитель Председателя
-          Совета менторов ФНС России, Грозненский государственный нефтяной
-          технический университет имени академика М.Д. Миллионщикова, Грозный,
-          Россия
+        <CollegiumMember fullname={i18n.t("member5")}>
+        {i18n.t("member5_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Воронина Татьяна Васильевна">
-          д.э.н., доцент, зав. кафедрой «Мировая экономика и международные
-          отношения» ЮФУ, Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member6")}>
+        {i18n.t("member6_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Гомцян Арарат Двинович">
-          д.э.н., профессор Армянского государственного экономического
-          университета, Ереван, Армения
+        <CollegiumMember fullname={i18n.t("member7")}>
+        {i18n.t("member7_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Горлов Сергей Михайлович">
-          д.э.н., профессор, зав. кафедрой «Экономика и внешнеэкономическая
-          деятельность», СКФУ, Ставрополь, Россия
+        <CollegiumMember fullname={i18n.t("member8")}>
+        {i18n.t("member8_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Димитриади Николай Ахиллесович">
-          д.э.н., доцент, Почетный работник высшего профессионального
-          образования Российской Федерации, Директор института междисциплинарных
-          исследованй глобальных процессов и стратегического управления,
-          профессор кафедры «Общего и стратегического менеджмента» РГЭУ (РИНХ),
-          Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member9")}>
+        {i18n.t("member9_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Засько Вадим Николаевич">
-          д.э.н., профессор Департамента налогов и налогового администрирования,
-          декан Факультета налогов, аудита и бизнес-анализа, Финансовый
-          университет при Правительстве Россйской Федерации, Москва, Россия
+        <CollegiumMember fullname={i18n.t("member10")}>
+        {i18n.t("member10_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Золотарев Владимир Семенович">
-          д.э.н., профессор, Заслуженный деятель науки Российской Федерации,
-          Почетный работник высшего профессионального образования Российской
-          Федерации, Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member11")}>
+        {i18n.t("member11_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Иванова Елена Александровна">
-          д.э.н., профессор, Почетный работник высшего профессионального
-          образования Российской Федерации, профессор кафедры «Экономика
-          региона, отраслей и предприятий» РГЭУ (РИНХ), директор Института
-          магистратуры РГЭУ (РИНХ), Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member12")}>
+        {i18n.t("member12_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Исраилова Элима Адамовна">
-          д.э.н., доцент, зав. кафедрой «Мировая экономика и международные
-          отношения» РГЭУ (РИНХ), Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member13")}>
+        {i18n.t("member13_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Назарян Григор Аршамович">
-          к.э.н., доцент, зав. кафедрой «Международные экономические отношения»
-          Армянского государственного экономического университета, Ереван,
-          Армения
+        <CollegiumMember fullname={i18n.t("member14")}>
+        {i18n.t("member14_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Ниворожкин Евгений">
-          д.э.н., Институт славянских и восточноевропейских исследований,
-          Лондон, Великобритания
+        <CollegiumMember fullname={i18n.t("member15")}>
+        {i18n.t("member15_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Романова Татьяна Федоровна">
-          д.э.н., профессор, Почетный работник высшего профессионального
-          образования Россйской Федерации, Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member16")}>
+        {i18n.t("member16_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Рубин Юрий Борисович">
-          д.э.н., профессор, член-корреспондент Российской академии образования,
-          Президент Московского финансово-промышленного университета «Синергия»,
-          Москва, Россия
+        <CollegiumMember fullname={i18n.t("member17")}>
+        {i18n.t("member17_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Семенюта Ольга Гетовна">
-          д.э.н., профессор, Почетный работник высшего профессионального
-          образования Россйской Федерации, зав. кафедрой «Банковское дело» РГЭУ
-          (РИНХ), Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member18")}>
+        {i18n.t("member18_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Сильвестров Сергей Николаевич">
-          д.э.н., профессор, Заслуженный экономист Российской Федерации,
-          действительный государственный советник второго класса, действительный
-          член (академик) Российской академии естественных наук (РАЕН), директор
-          Института экономической политики и проблем экономической безопасности
-          Финансового университета при Правительстве РФ, Москва, Россия
+        <CollegiumMember fullname={i18n.t("member19")}>
+        {i18n.t("member19_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Соболева Светлана Юльевна">
-          к.э.н., доцент, зав. кафедрой «Экономика и менеджмент» Института
-          общественного здоровья ФГБОУ ВО ВолгГМУ Минздрава России, Волгоград,
-          Россия
+        <CollegiumMember fullname={i18n.t("member20")}>
+        {i18n.t("member20_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Тяглов Сергей Гаврилович">
-          д.э.н., профессор, Почетный работник высшего профессионального
-          образования Российской Федерации, профессор кафедры «Экономика
-          региона, отраслей и предприятий» РГЭУ (РИНХ), Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member21")}>
+        {i18n.t("member21_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Цепилова Елена Сергеевна">
-          д.э.н., доцент, профессор кафедры управления и технологий в туризме и
-          рекреации Сочинского государственного университета (СГУ), Сочи, Россия
+        <CollegiumMember fullname={i18n.t("member22")}>
+        {i18n.t("member22_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Шевченко Игорь Викторович">
-          д.э.н., профессор, декан экономического факультета, зав. кафедрой
-          «Мировая экономика и менеджмент» Кубанского государственного
-          университета (КубГУ), Краснодар, Россия
+        <CollegiumMember fullname={i18n.t("member23")}>
+        {i18n.t("member23_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Шеховцов Роман Викторович">
-          д.э.н., профессор, заместитель министра экономического развития
-          Ростовской области, Ростов-на-Дону, Россия
+        <CollegiumMember fullname={i18n.t("member24")}>
+        {i18n.t("member24_definition")}
         </CollegiumMember>
-        <CollegiumMember fullname="Шубаева Вероника Георгиевна">
-          д.э.н., профессор, проректор по учебной и методической работе
-          Санкт-Петербургского государственного экономического университета,
-          Санкт- Петербург, Россия
+        <CollegiumMember fullname={i18n.t("member25")}>
+        {i18n.t("member25_definition")}
         </CollegiumMember>
       </ol>
     </StyledCollegiumPage>

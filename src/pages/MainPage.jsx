@@ -9,6 +9,7 @@ import {
 } from "../assets/index";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const StyledTitleContainer = styled.div`
   background: #353980;
@@ -84,17 +85,16 @@ const TimelineContainer = styled.div`
 `;
 
 export const MainPage = () => {
+  const { i18n } = useTranslation();
   return (
     <Flex vertical>
       <Flex>
         <StyledContentContainer>
-          <StyledHeader>Финансовые исследования</StyledHeader>
+          <StyledHeader>{i18n.t("fin_research")}</StyledHeader>
           <StyledTitleContainer>
-            Научно-образовательный и прикладной журнал
+          {i18n.t("journal_definition")}
           </StyledTitleContainer>
-          Рецензируемое научное издание, издаваемое Ростовским государственным
-          экономическим университетом с 2000 года, специализирующееся в области
-          финансов и кредита на юге России.
+          {i18n.t("journal_info")}
           <Flex gap={20}>
             <Link to="https://vak.minobrnauki.gov.ru/documents#tab=_tab:editions~">
               <Image src={MinObrLogo} preview={false} />
@@ -112,59 +112,45 @@ export const MainPage = () => {
       <Flex vertical>
         <StyledDescriptionWrapper>
           <StyledDescription>
-            «Финансовые исследования» – рецензируемое научное периодическое
-            печатное издание, выходит в свет с 2000 года. Журнал является
-            единственным на Юге России специализированным в области финансов и
-            кредита. Издание на принципах самофинансирования осуществляется
-            Ростовским государственным экономическим университетом (РИНХ),
-            крупнейшим научно-учебным центром в области финансов и кредита в
-            Южном федеральном округе.
+          {i18n.t("main_text1")}
           </StyledDescription>
         </StyledDescriptionWrapper>
         <TimelineContainer>
           <StyledLeftTimeline>
-            Концепция журнала ориентирована на теоретическое обобщение и
-            прикладной анализ развития мировой и национальных финансовой и
-            денежно-кредитной систем, рынка ценных бумаг, а также выявление
-            национальной и региональной специфики, особенностей и последствий
-            включения национального и регионального финансового рынка в систему
-            мирового финансового рынка.
+          {i18n.t("main_text2")}
           </StyledLeftTimeline>
           <StyledRightTimeline>
-            Тематика журнала включает теоретические разработки, прикладные
-            исследования, в том числе совместные с зарубежными учеными,
-            методические разработки по ключевым финансовым направлениям.
+          {i18n.t("main_text3")}
           </StyledRightTimeline>
           <StyledLeftTimeline>
             <Flex vertical>
-              <div>Основные тематические рубрики журнала:</div>
-              <div>• Финансовые рынки;</div>
-              <div>• Банковское дело;</div>
-              <div>• Теория и методология финансов;</div>
-              <div>• Финансовая система;</div>
-              <div>• Государственные финансы;</div>
-              <div>• Страховое дело;</div>
+              <div>{i18n.t("main_categories")}:</div>
+              <div>• {i18n.t("main_category1")};</div>
+              <div>• {i18n.t("main_category2")};</div>
+              <div>• {i18n.t("main_category3")};</div>
+              <div>• {i18n.t("main_category4")};</div>
+              <div>• {i18n.t("main_category5")};</div>
+              <div>• {i18n.t("main_category6")};</div>
             </Flex>
             <Flex vertical>
-              <div>• Финансовые риски;</div>
-              <div>• Финансы предприятий и организаций;</div>
-              <div>• Региональная экономика;</div>
-              <div>• Экономика предприятий;</div>
-              <div>• Макроэкономические процессы;</div>
-              <div>• Международное сотрудничество;</div>
-              <div>• Научная жизнь</div>
+              <div>• {i18n.t("main_category7")};</div>
+              <div>• {i18n.t("main_category8")};</div>
+              <div>• {i18n.t("main_category9")};</div>
+              <div>• {i18n.t("main_category10")};</div>
+              <div>• {i18n.t("main_category11")};</div>
+              <div>• {i18n.t("main_category12")};</div>
+              <div>• {i18n.t("main_category13")}</div>    
             </Flex>
           </StyledLeftTimeline>
           <StyledRightTimeline>
             <Flex vertical>
               <div>
-                Содержание рубрик журнала соответствует отраслям науки и группам
-                специальностей, по которым присуждаются ученые степени:
+              {i18n.t("magazin_content")}:
               </div>
-              <div>5.2.4. Финансы (экономические науки)</div>
-              <div>5.2.5. Мировая экономика (экономические науки)</div>
+              <div>5.2.4.{i18n.t("magazin_content1")}</div>
+              <div>5.2.5. {i18n.t("magazin_content2")}</div>
               <div>
-                5.2.3. Региональная и отраслевая экономики (экономические науки)
+                5.2.3.{i18n.t("magazin_content3")}
               </div>
             </Flex>
           </StyledRightTimeline>

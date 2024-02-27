@@ -3,6 +3,7 @@ import { Divider, Flex, Image } from "antd";
 import styled from "styled-components";
 import { ChuvakImage } from "../assets";
 import { OutlinedLink } from "../styles/typography";
+import { useTranslation } from "react-i18next";
 
 const StyledNewsPage = styled(Flex)`
   gap: 20px;
@@ -16,53 +17,50 @@ const StyledChiefInfo = styled(Flex)`
 `;
 
 export const News = () => {
+  const { i18n } = useTranslation();
   return (
     <StyledNewsPage gap={20}>
       <StyledChiefInfo vertical>
         <Image src={ChuvakImage} preview={false} />
         <Flex vertical>
-          <h1>Кузнецов Николай Геннадьевич</h1>
-          Главный редактор, д.э.н., профессор
+          <h1>{i18n.t("chuvak_news")}</h1>
+          {i18n.t("chuvak_news_definiton")}
         </Flex>
       </StyledChiefInfo>
       <Flex vertical>
-        <h1>Актуальное:</h1>
+        <h1>{i18n.t("actual")}:</h1>
         <div>
-          • прием статей в журнал «Финансовые исследования» №1 заканчивается 10
-          декабря
+          • {i18n.t("news_december")}
         </div>
         <div>
-          • прием статей в журнал «Финансовые исследования» №2 заканчивается 10
-          апреля
+          • {i18n.t("news_april")}
         </div>
         <div>
-          • прием статей в журнал «Финансовые исследования» №1 заканчивается 10
-          мая
+          • {i18n.t("news_may")}
         </div>
         <div>
-          • прием статей в журнал «Финансовые исследования» №1 заканчивается 10
-          сентября
+          • {i18n.t("news_september")}
         </div>
       </Flex>
       <Flex vertical>
-        <h1>Подписка:</h1>
-        <div>Подписку на журнал можно оформить на сайте:</div>
+        <h1>{i18n.t("subsc")}:</h1>
+        <div>{i18n.t("subscribe")}:</div>
         <OutlinedLink to="https://podpiska.pochta.ru/">
-          Почта России
+        {i18n.t("post")}
         </OutlinedLink>
-        <OutlinedLink to="https://ural-press.ru/">Урал Пресс</OutlinedLink>
-        <div>или в Редакции журнала по договору подписки.</div>
+        <OutlinedLink to="https://ural-press.ru/">{i18n.t("press")}</OutlinedLink>
+        <div>{i18n.t("redact_subs")}.</div>
         <Divider />
 
-        <h1>Мы есть:</h1>
-        <div>Журнал «Финансовые исследования» доступны:</div>
+        <h1>{i18n.t("we_are")}:</h1>
+        <div>{i18n.t("journal_able")}:</div>
         <OutlinedLink to="https://cyberleninka.ru/journal/n/finansovye-issledovaniya?i=1127838">
-          КиберЛенинка
+        {i18n.t("leninka")}
         </OutlinedLink>
         <OutlinedLink to="https://elibrary.ru/title_profile.asp?id=10488">
           eLibrary
         </OutlinedLink>
-        <div>или в Редакции журнала по договору подписки.</div>
+        <div>{i18n.t("or")}.</div>
         <Divider />
       </Flex>
     </StyledNewsPage>
