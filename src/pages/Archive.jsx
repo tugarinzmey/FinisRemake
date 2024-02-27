@@ -1,12 +1,8 @@
-import styled from "styled-components";
 import { StyledPageHeader } from "../styles/typography";
 import { Flex } from "antd";
 import { OutlinedLink } from "../styles/typography";
+import { PageWrapper } from "../components/PageWrapper";
 import { useTranslation } from "react-i18next";
-
-const StyledArchivePage = styled(Flex)`
-  padding: 30px;
-`;
 
 const getReleaseLinks = (year, count) => {
   let links = [];
@@ -131,7 +127,6 @@ const annotations = [
 ];
 
 const Magazine = ({ magazine }) => {
-  
   return (
     <div>
       {magazine.year} г.{" "}
@@ -160,11 +155,9 @@ const Annotation = ({ annotation }) => {
 export const Archive = () => {
   const { i18n } = useTranslation();
   return (
-    <StyledArchivePage vertical gap={20}>
+    <PageWrapper vertical gap={20}>
       <Flex vertical>
-        <StyledPageHeader>
-        {i18n.t("journal_definition")}
-        </StyledPageHeader>
+        <StyledPageHeader>{i18n.t("journal_definition")}</StyledPageHeader>
         <StyledPageHeader>{i18n.t("journal_name")}</StyledPageHeader>
       </Flex>
       <Flex justify="space-evenly">
@@ -187,6 +180,6 @@ export const Archive = () => {
           </Flex>
         </Flex>
       </Flex>
-    </StyledArchivePage>
+    </PageWrapper>
   );
 };
